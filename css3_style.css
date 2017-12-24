@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+ul.list-top {
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+ul {
+  position: relative;
+}
+
+ul li {
+  line-height: 1.5;
+  list-style-type: none!important;
+}
+
+ul li:before {/*疑似要素*/
+  font-family: FontAwesome;
+  content: "\f138";/*アイコンの種類*/
+  position: absolute;
+  left : 1em;/*左端からのアイコンまでの距離*/
+  color: skyblue;/*アイコン色*/
+}
+
+h1 {
+  color: #6cb4e4;
+  text-align: left;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+h2 {
+  margin-top: 1em;
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}
+
+
+h3 {
+  margin-top: 1.5em;
+  border-bottom: solid 3px #cce4ff;
+  position: relative;
+}
+
+
+h3:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #5472cd;
+  bottom: -3px;
+  width: 20%;
+}
+
+h4 {
+  margin-top   : 10px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;
+}
+
+h4:before{
+  font-family: FontAwesome;/*忘れずに*/
+  content: "\f00c";/*アイコンのユニコード*/
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+}
+
+pre {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 1px #eee;
+    border-left: solid 1px #eee;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.22);
+}
+

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Flexbox チートシート</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css3_style.css">
+<style>
+div.flex-layout {
+	display			: flex;
+	flex-wrap		: wrap;
+}
+div.flex-layout > div {
+	margin-right	: 20px;
+}
+
+div.flex {
+	display			: flex;
+	border			: solid 1px black;
+	width			: 200px;
+	height			: 200px;
+}
+div.flex div {
+	text-align		: center;
+	font-size		: 14pt;
+	word-wrap		: break-word;
+	width			: 30px;
+	border			: solid 1px black;
+	background-color: whitesmoke;
+}
+</style>
+</head>
+<body>
+<h1>CSS Flexbox チートシート</h1>
+
+
+
+
+<ul class="list-top">
+<li>
+  <a href="#flex-container">フレックス・コンテナ</a>
+  <ul>
+    <li><a href="#flex-direction">flex-direction</a></li>
+    <li><a href="#flex-wrap">flex-wrap</a></li>
+    <li><a href="#flex-flow">flex-flow (一括指定)</a></li>
+    <li><a href="#justify-content">justify-content</a></li>
+    <li><a href="#align-items">align-items</a></li>
+    <li><a href="#align-content">align-content</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#flex-item">フレックス・アイテム</a>
+  <ul>
+    <li><a href="#flex-grow">flex-grow</a></li>
+    <li><a href="#flex-shrink">flex-shrink</a></li>
+    <li><a href="#flex-basis">flex-basis</a></li>
+    <li><a href="#flex">flex (一括指定)</a></li>
+    <li><a href="#align-self">align-self</a></li>
+    <li><a href="#order">order</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#ref">参考URL</a>
+</li>
+</ul>
+
+
+
+
+<a name="flex-container">
+<h2>フレックス・コンテナ</h2>
+
+<a name="flex-direction"><h3>flex-direction</h3>
+アイテムをどの方向に並べるか。右から左？上から下？
+
+<div class="flex-layout">
+
+<div>
+  <h4>row (規定)</h4>
+  <div class="flex" style="flex-direction:row;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>row-reverse</h4>
+  <div class="flex" style="flex-direction:row-reverse;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>column</h4>
+  <div class="flex" style="flex-direction:column;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>column-reverse</h4>
+  <div class="flex" style="flex-direction:column-reverse;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex-wrap"><h3>flex-wrap</h3>
+アイテムの折り返し指定。
+
+<div class="flex-layout">
+
+<div>
+  <h4>nowrap (規定)</h4>
+  <div class="flex" style="flex-wrap:nowrap;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>wrap</h4>
+  <div class="flex" style="flex-wrap:wrap;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>wrap-reverse</h4>
+  <div class="flex" style="flex-wrap:wrap-reverse;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex-flow"><h3>flex-flow (一括指定)</h3>
+flex-flow: direction値 wrap値;
+
+
+
+
+<a name="justify-content"><h3>justify-content</h3>
+アイテムの横位置の詰め方。
+
+<div class="flex-layout">
+
+<div>
+  <h4>start (規定)</h4>
+  <div class="flex" style="justify-content:start;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>end</h4>
+  <div class="flex" style="justify-content:end;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>center</h4>
+  <div class="flex" style="justify-content:center;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>space-between</h4>
+  <div class="flex" style="justify-content:space-between;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+<div>
+  <h4>space-evenly</h4>
+  <div class="flex" style="justify-content:space-evenly;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="align-items"><h3>align-items</h3>
+アイテムの縦位置をどこに置くか。
+
+<div class="flex-layout">
+
+<div>
+  <h4>stretch (規定)</h4>
+  <div class="flex" style="flex-wrap:wrap; align-items:stretch;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-start</h4>
+  <div class="flex" style="flex-wrap:wrap; align-items:flex-start;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>center</h4>
+  <div class="flex" style="flex-wrap:wrap; align-items:center;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-end</h4>
+  <div class="flex" style="flex-wrap:wrap; align-items:flex-end;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="align-content"><h3>align-content</h3>
+複数行になったとき、アイテムをどのような詰め方で置くか。
+
+<div class="flex-layout">
+
+<div>
+  <h4>stretch (規定)</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:stretch;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-start</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:flex-start;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>center</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:center;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-end</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:flex-end;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>space-between</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:space-between;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+<div>
+  <h4>space-around</h4>
+  <div class="flex" style="flex-wrap:wrap; align-content:space-around;">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex-item">
+<h2>フレックス・アイテム</h2>
+
+<a name="flex-grow"><h3>flex-grow</h3>
+フレックスコンテナの主軸の幅に余白がある場合の、フレックスアイテムの伸び率を指定。大きいほど幅が広がる。<br>
+伸び率はフレックスコンテナの主軸の幅やflex-wrapプロパティの折り返しの指定、flex-basisプロパティに影響される。<br>
+0にすると、flex-basisで指定した幅固定になる。<br>
+
+<div class="flex-layout">
+
+<div>
+  <h4>order</h4>
+  <div class="flex" style="height:50px;flex-wrap:wrap">
+  <div style="flex-grow:0;">0</div>
+  <div style="flex-grow:1;">1</div>
+  <div style="flex-grow:2;">2</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex-shrink"><h3>flex-shrink</h3>
+アイテム合計幅がコンテナ幅よりも大きい場合の、アイテムの縮み率を指定。大きいほど幅が縮む。<br>
+flex-wrap:no-wrapの場合のみ意味を持つ。<br>
+0にすると、flex-basisで指定した幅固定になる。<br>
+
+<div class="flex-layout">
+
+<div>
+  <h4>order</h4>
+  <div class="flex" style="height:50px;">
+  <div style="width:100px;flex-shrink:1;">0</div>
+  <div style="width:100px;flex-shrink:2;">1</div>
+  <div style="width:100px;flex-shrink:3;">2</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex-basis"><h3>flex-basis</h3>
+幅を固定や％で指定。<br>
+widthとほぼおなじだが、flex-grow, flex-shrink 使うときは width じゃなくて flex-basis を元にする。
+
+<div class="flex-layout">
+
+<div>
+  <h4>order</h4>
+  <div class="flex" style="height:50px;">
+  <div style="flex-basis:100px;">100px</div>
+  <div style="flex-basis:50px;">50px</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="flex"><h3>flex (一括指定)</h3>
+flex: grow値 shrink値 basis値;<br>
+
+
+
+
+<a name="align-self"><h3>align-self</h3>
+親の align-items を無視してどこに置くかを指定する。<br>
+親に従うなら auto を指定する。
+
+<div class="flex-layout">
+
+<div>
+  <h4>stretch</h4>
+  <div class="flex" style="height:50px;">
+  <div>1</div><div>2</div><div>3</div>
+  <div style="align-self:stretch">4</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-start</h4>
+  <div class="flex" style="height:50px;">
+  <div>1</div><div>2</div><div>3</div>
+  <div style="align-self:flex-start">4</div>
+  </div>
+</div>
+
+<div>
+  <h4>center</h4>
+  <div class="flex" style="height:50px;">
+  <div>1</div><div>2</div><div>3</div>
+  <div style="align-self:center">4</div>
+  </div>
+</div>
+
+<div>
+  <h4>flex-end</h4>
+  <div class="flex" style="height:50px;">
+  <div>1</div><div>2</div><div>3</div>
+  <div style="align-self:flex-end">4</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<a name="order"><h3>order</h3>
+以下はhtmlソースでは1～4をバラバラの順に書いてあるが、orderを指定することで指定順に表示している。
+
+<div class="flex-layout">
+
+<div>
+  <h4>order</h4>
+  <div class="flex" style="height:50px;">
+  <div style="order:1;">1</div>
+  <div style="order:4;">4</div>
+  <div style="order:2;">2</div>
+  <div style="order:3;">3</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<div>
+<a name="ref"><h2>参考URL</h2>
+<a target="_blank" href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout">https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout</a><br>
+<a target="_blank" href="https://app.codegrid.net/entry/flexiblebox-1">https://app.codegrid.net/entry/flexiblebox-1</a><br>
+<a target="_blank" href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet">https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet</a><br>
+</div>
+
+
+
+
+</body>
+</html>
