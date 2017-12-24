@@ -38,6 +38,9 @@ div.flex div {
 
 <ul class="list-top">
 <li>
+  <a href="#basic">基本的な使い方</a>
+</li>
+<li>
   <a href="#flex-container">フレックス・コンテナ</a>
   <ul>
     <li><a href="#flex-direction">flex-direction</a></li>
@@ -64,6 +67,13 @@ div.flex div {
 </li>
 </ul>
 
+
+
+
+<a name="basic"><h2>基本的な使い方</h2>
+
+display:flex の要素の下に、block要素を配置するとそれが自動的にフレックスアイテムになる。<br>
+コンテナの要素に、アイテムを流し込んで配置するイメージ。<br>
 
 
 
@@ -291,7 +301,6 @@ flex-flow: direction値 wrap値;
 <div class="flex-layout">
 
 <div>
-  <h4>order</h4>
   <div class="flex" style="height:50px;flex-wrap:wrap">
   <div style="flex-grow:0;">0</div>
   <div style="flex-grow:1;">1</div>
@@ -312,7 +321,6 @@ flex-wrap:no-wrapの場合のみ意味を持つ。<br>
 <div class="flex-layout">
 
 <div>
-  <h4>order</h4>
   <div class="flex" style="height:50px;">
   <div style="width:100px;flex-shrink:1;">0</div>
   <div style="width:100px;flex-shrink:2;">1</div>
@@ -332,7 +340,6 @@ widthとほぼおなじだが、flex-grow, flex-shrink 使うときは width じ
 <div class="flex-layout">
 
 <div>
-  <h4>order</h4>
   <div class="flex" style="height:50px;">
   <div style="flex-basis:100px;">100px</div>
   <div style="flex-basis:50px;">50px</div>
